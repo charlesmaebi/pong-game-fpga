@@ -1,8 +1,18 @@
 module GraphicsDriver(
-	input logic clock50,
+	input logic clock25,
 	input logic reset,
 	output logic hsync,
 	output logic vsync,
+	
+	input logic [9:0] ball_upper,
+	input logic [9:0] ball_lower,
+	input logic [9:0] ball_right,
+	input logic [9:0] ball_left,
+	
+	input logic [9:0] paddle1_upper,
+	input logic [9:0] paddle1_lower,
+	input logic [9:0] paddle1_right,
+	input logic [9:0] paddle1_left,
 
 	
 	output logic [3:0] red_display, // 0000 off 1111 on
@@ -10,17 +20,9 @@ module GraphicsDriver(
 	output logic [3:0] green_display // 0000 off 1111 on
 );
 
-wire clock25;
 wire [3:0] red_decoded, green_decoded, blue_decoded;
 wire [9:0] h_counter, v_counter;
 wire [3:0] color;
-wire [9:0] upper, lower, left, right;
-
-ClockDivider clock_divider(
-	.clock50(clock50),
-	.reset(reset),
-	.clock25(clock25)
-);
 
 SyncCount sync_count(
 	.enable(clock25),
@@ -31,33 +33,18 @@ SyncCount sync_count(
 	.v_counter(v_counter)
 );
 
-logic vsync_prev;
-logic frame_tick;
-
-always_ff @(posedge clock25) begin
-    vsync_prev <= vsync;
-end
-
-assign frame_tick = vsync & ~vsync_prev;
-
-Ball ball(
-	.reset(reset),
-	.enable(frame_tick),
-	.clock25(clock25),
-	.upper(upper),
-	.lower(lower),
-	.right(right),
-	.left(left)
-);
-
 DrawBall draw_ball(
 	.reset(reset),
 	.h_counter(h_counter),
 	.v_counter(v_counter),
-	.upper(upper),
-	.lower(lower),
-	.right(right),
-	.left(left),
+	.ball_upper(ball_upper),
+	.ball_lower(ball_lower),
+	.ball_right(ball_right),
+	.ball_left(ball_left),
+	.paddle_right(paddle1_right),
+	.paddle_left(paddle1_left),
+	.paddle_upper(paddle1_upper),
+	.paddle_lower(paddle1_lower),
 	.color(color)
 );
 

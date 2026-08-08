@@ -1,0 +1,8 @@
+Game(
+	// user controls
+	input logic paddel1,
+	input logic reset,
+	
+	input logic clock50,
+	
+);

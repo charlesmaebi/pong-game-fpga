@@ -2,6 +2,8 @@ module Ball(
 	input logic reset,
 	input logic enable, // enables based on vsync high/low
 	input logic clock25,
+	input logic p1_upper,
+	input logic p1_lower,
 	
 	
 	
@@ -17,14 +19,14 @@ typedef enum logic [1:0] {
 
 direction_t direction;
 
-localparam [9:0] SPEED = 10'd3;
+localparam [9:0] SPEED = 10'd1;
 
 localparam [5:0] BALL_HEIGHT = 6'd10;
 localparam [5:0] BALL_WIDTH = 6'd8;
 
-localparam [9:0] TOP_SCREEN = 10'd35;
+localparam [9:0] TOP_SCREEN = 10'd34;
 localparam [9:0] BOTTOM_SCREEN = 10'd514;
-localparam [9:0] LEFT_SCREEN = 10'd144;
+localparam [9:0] LEFT_SCREEN = 10'd143;
 localparam [9:0] SCREEN_RIGHT = 10'd783;
 
 always_ff @(posedge clock25 or posedge reset) begin 

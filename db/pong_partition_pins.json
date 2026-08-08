@@ -64,6 +64,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "p1_up",
+					"strict" : false
+				},
+				{
+					"name" : "p1_down",
+					"strict" : false
+				},
+				{
 					"name" : "clock50",
 					"strict" : false
 				}

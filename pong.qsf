@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "MAX 10"
 set_global_assignment -name DEVICE 10M50DAF484C7G
-set_global_assignment -name TOP_LEVEL_ENTITY GraphicsDriver
+set_global_assignment -name TOP_LEVEL_ENTITY Game
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 21.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:19:15  JULY 26, 2026"
 set_global_assignment -name LAST_QUARTUS_VERSION "21.1.0 Lite Edition"
@@ -53,9 +53,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE ClockDivider.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Decoder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE GraphicsDriver.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Ball.sv
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_location_assignment PIN_AA1 -to red_display[0]
 set_location_assignment PIN_V1 -to red_display[1]
 set_location_assignment PIN_Y2 -to red_display[2]
@@ -73,4 +70,12 @@ set_location_assignment PIN_N3 -to hsync
 set_location_assignment PIN_N1 -to vsync
 set_location_assignment PIN_F15 -to reset
 set_global_assignment -name SYSTEMVERILOG_FILE DrawBall.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Game.sv
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE Paddle.sv
+set_location_assignment PIN_C10 -to player1
+set_location_assignment PIN_B8 -to p1_up
+set_location_assignment PIN_A7 -to p1_down
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

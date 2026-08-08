@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Fri Aug  7 18:56:29 2026
+Analysis & Synthesis Status : Successful - Sat Aug  8 10:25:54 2026
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : pong
-Top-level Entity Name : GraphicsDriver
+Top-level Entity Name : Game
 Family : MAX 10
-Total logic elements : 157
-    Total combinational functions : 156
-    Dedicated logic registers : 61
-Total registers : 61
-Total pins : 16
+Total logic elements : 200
+    Total combinational functions : 199
+    Dedicated logic registers : 81
+Total registers : 81
+Total pins : 18
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

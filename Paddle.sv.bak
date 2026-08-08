@@ -1,0 +1,5 @@
+Paddle(
+	input logic paddle,
+	input logic reset,
+	input logic clock
+);

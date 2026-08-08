@@ -1,5 +1,5 @@
 
-State Machine - |GraphicsDriver|Ball:ball|direction
+State Machine - |Game|Ball:ball|direction
 Name direction.DOWN_RIGHT direction.UP_LEFT direction.UP_RIGHT direction.DOWN_LEFT 
 direction.DOWN_LEFT 0 0 0 0 
 direction.UP_RIGHT 0 0 1 1 
