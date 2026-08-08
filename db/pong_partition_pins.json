@@ -1,0 +1,73 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "hsync",
+					"strict" : false
+				},
+				{
+					"name" : "vsync",
+					"strict" : false
+				},
+				{
+					"name" : "red_display[0]",
+					"strict" : false
+				},
+				{
+					"name" : "red_display[1]",
+					"strict" : false
+				},
+				{
+					"name" : "red_display[2]",
+					"strict" : false
+				},
+				{
+					"name" : "red_display[3]",
+					"strict" : false
+				},
+				{
+					"name" : "blue_display[0]",
+					"strict" : false
+				},
+				{
+					"name" : "blue_display[1]",
+					"strict" : false
+				},
+				{
+					"name" : "blue_display[2]",
+					"strict" : false
+				},
+				{
+					"name" : "blue_display[3]",
+					"strict" : false
+				},
+				{
+					"name" : "green_display[0]",
+					"strict" : false
+				},
+				{
+					"name" : "green_display[1]",
+					"strict" : false
+				},
+				{
+					"name" : "green_display[2]",
+					"strict" : false
+				},
+				{
+					"name" : "green_display[3]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "clock50",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
