@@ -50,7 +50,6 @@ set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name SYSTEMVERILOG_FILE Mux.sv
 set_global_assignment -name SYSTEMVERILOG_FILE SyncCount.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ClockDivider.sv
-set_global_assignment -name SYSTEMVERILOG_FILE Decoder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE GraphicsDriver.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Ball.sv
 set_location_assignment PIN_AA1 -to red_display[0]

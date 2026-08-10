@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pong
-Sat Aug  8 10:25:54 2026
+Sun Aug  9 20:24:43 2026
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -19,10 +19,9 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
  11. Inverted Register Statistics
  12. Multiplexer Restructuring Statistics (Restructuring Performed)
  13. Port Connectivity Checks: "Paddle:paddle1"
- 14. Port Connectivity Checks: "Ball:ball"
- 15. Post-Synthesis Netlist Statistics for Top Partition
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -49,13 +48,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Aug  8 10:25:54 2026       ;
+; Analysis & Synthesis Status        ; Successful - Sun Aug  9 20:24:43 2026       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; pong                                        ;
 ; Top-level Entity Name              ; Game                                        ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 200                                         ;
-;     Total combinational functions  ; 199                                         ;
+; Total logic elements               ; 262                                         ;
+;     Total combinational functions  ; 261                                         ;
 ;     Dedicated logic registers      ; 81                                          ;
 ; Total registers                    ; 81                                          ;
 ; Total pins                         ; 18                                          ;
@@ -167,7 +166,8 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-8         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -192,17 +192,17 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------------------------------+
 ; Resource                                    ; Usage                             ;
 +---------------------------------------------+-----------------------------------+
-; Estimated Total logic elements              ; 200                               ;
+; Estimated Total logic elements              ; 262                               ;
 ;                                             ;                                   ;
-; Total combinational functions               ; 199                               ;
+; Total combinational functions               ; 261                               ;
 ; Logic element usage by number of LUT inputs ;                                   ;
-;     -- 4 input functions                    ; 36                                ;
-;     -- 3 input functions                    ; 115                               ;
-;     -- <=2 input functions                  ; 48                                ;
+;     -- 4 input functions                    ; 49                                ;
+;     -- 3 input functions                    ; 157                               ;
+;     -- <=2 input functions                  ; 55                                ;
 ;                                             ;                                   ;
 ; Logic elements by mode                      ;                                   ;
-;     -- normal mode                          ; 73                                ;
-;     -- arithmetic mode                      ; 126                               ;
+;     -- normal mode                          ; 98                                ;
+;     -- arithmetic mode                      ; 163                               ;
 ;                                             ;                                   ;
 ; Total registers                             ; 81                                ;
 ;     -- Dedicated logic registers            ; 81                                ;
@@ -214,8 +214,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                   ;
 ; Maximum fan-out node                        ; ClockDivider:clock_divider|toggle ;
 ; Maximum fan-out                             ; 81                                ;
-; Total fan-out                               ; 923                               ;
-; Average fan-out                             ; 2.92                              ;
+; Total fan-out                               ; 1111                              ;
+; Average fan-out                             ; 2.94                              ;
 +---------------------------------------------+-----------------------------------+
 
 
@@ -224,14 +224,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+----------------+--------------+
 ; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                              ; Entity Name    ; Library Name ;
 +---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+----------------+--------------+
-; |Game                           ; 199 (1)             ; 81 (1)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 18   ; 0            ; 0          ; |Game                                            ; Game           ; work         ;
-;    |Ball:ball|                  ; 73 (73)             ; 37 (37)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Game|Ball:ball                                  ; Ball           ; work         ;
+; |Game                           ; 261 (1)             ; 81 (1)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 18   ; 0            ; 0          ; |Game                                            ; Game           ; work         ;
+;    |Ball:ball|                  ; 128 (128)           ; 37 (37)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Game|Ball:ball                                  ; Ball           ; work         ;
 ;    |ClockDivider:clock_divider| ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Game|ClockDivider:clock_divider                 ; ClockDivider   ; work         ;
 ;    |GraphicsDriver:driver|      ; 103 (0)             ; 22 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Game|GraphicsDriver:driver                      ; GraphicsDriver ; work         ;
 ;       |DrawBall:draw_ball|      ; 60 (60)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Game|GraphicsDriver:driver|DrawBall:draw_ball   ; DrawBall       ; work         ;
 ;       |Mux:red_mux|             ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Game|GraphicsDriver:driver|Mux:red_mux          ; Mux            ; work         ;
 ;       |SyncCount:sync_count|    ; 36 (36)             ; 22 (22)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Game|GraphicsDriver:driver|SyncCount:sync_count ; SyncCount      ; work         ;
-;    |Paddle:paddle1|             ; 21 (21)             ; 20 (20)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Game|Paddle:paddle1                             ; Paddle         ; work         ;
+;    |Paddle:paddle1|             ; 28 (28)             ; 20 (20)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Game|Paddle:paddle1                             ; Paddle         ; work         ;
 +---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -249,22 +249,23 @@ Encoding Type:  One-Hot
 +----------------------+----------------------+-------------------+--------------------+---------------------+
 
 
-+------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                     ;
-+---------------------------------------+--------------------------------+
-; Register name                         ; Reason for Removal             ;
-+---------------------------------------+--------------------------------+
-; Ball:ball|right[0]                    ; Merged with Ball:ball|upper[0] ;
-; Ball:ball|left[0]                     ; Merged with Ball:ball|upper[0] ;
-; Ball:ball|lower[0]                    ; Merged with Ball:ball|upper[0] ;
-; Ball:ball|lower[1]                    ; Merged with Ball:ball|upper[1] ;
-; Ball:ball|right[1]                    ; Merged with Ball:ball|left[1]  ;
-; Ball:ball|right[2]                    ; Merged with Ball:ball|left[2]  ;
-; Ball:ball|right[3]                    ; Merged with Ball:ball|left[3]  ;
-; Ball:ball|direction~4                 ; Lost fanout                    ;
-; Ball:ball|direction~5                 ; Lost fanout                    ;
-; Total Number of Removed Registers = 9 ;                                ;
-+---------------------------------------+--------------------------------+
++-------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                      ;
++----------------------------------------+--------------------------------+
+; Register name                          ; Reason for Removal             ;
++----------------------------------------+--------------------------------+
+; Ball:ball|right[0]                     ; Merged with Ball:ball|upper[0] ;
+; Ball:ball|left[0]                      ; Merged with Ball:ball|upper[0] ;
+; Ball:ball|lower[0]                     ; Merged with Ball:ball|upper[0] ;
+; Ball:ball|lower[1]                     ; Merged with Ball:ball|upper[1] ;
+; Ball:ball|right[1]                     ; Merged with Ball:ball|left[1]  ;
+; Ball:ball|right[2]                     ; Merged with Ball:ball|left[2]  ;
+; Ball:ball|right[3]                     ; Merged with Ball:ball|left[3]  ;
+; Ball:ball|direction~4                  ; Lost fanout                    ;
+; Ball:ball|direction~5                  ; Lost fanout                    ;
+; Ball:ball|direction~6                  ; Lost fanout                    ;
+; Total Number of Removed Registers = 10 ;                                ;
++----------------------------------------+--------------------------------+
 
 
 +------------------------------------------------------+
@@ -277,7 +278,7 @@ Encoding Type:  One-Hot
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 80    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 67    ;
+; Number of registers using Clock Enable       ; 65    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -288,43 +289,45 @@ Encoding Type:  One-Hot
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
 ; Ball:ball|left[8]                       ; 5       ;
-; Ball:ball|left[5]                       ; 3       ;
-; Ball:ball|left[4]                       ; 3       ;
-; Ball:ball|left[3]                       ; 5       ;
+; Ball:ball|left[5]                       ; 5       ;
+; Ball:ball|left[4]                       ; 5       ;
+; Ball:ball|left[3]                       ; 6       ;
 ; Ball:ball|right[8]                      ; 3       ;
 ; Ball:ball|right[6]                      ; 3       ;
-; Ball:ball|upper[7]                      ; 3       ;
-; Ball:ball|upper[6]                      ; 3       ;
-; Ball:ball|upper[5]                      ; 3       ;
-; Ball:ball|upper[2]                      ; 3       ;
-; Ball:ball|upper[1]                      ; 7       ;
-; Ball:ball|lower[7]                      ; 3       ;
-; Ball:ball|lower[6]                      ; 3       ;
-; Ball:ball|lower[5]                      ; 3       ;
-; Ball:ball|lower[4]                      ; 3       ;
-; Ball:ball|lower[3]                      ; 3       ;
-; Paddle:paddle1|paddle_upper[7]          ; 2       ;
-; Paddle:paddle1|paddle_upper[6]          ; 2       ;
-; Paddle:paddle1|paddle_upper[5]          ; 2       ;
-; Paddle:paddle1|paddle_upper[3]          ; 2       ;
-; Paddle:paddle1|paddle_upper[1]          ; 2       ;
-; Paddle:paddle1|paddle_lower[8]          ; 2       ;
-; Paddle:paddle1|paddle_lower[5]          ; 2       ;
-; Paddle:paddle1|paddle_lower[4]          ; 2       ;
-; Paddle:paddle1|paddle_lower[3]          ; 2       ;
-; Paddle:paddle1|paddle_lower[1]          ; 2       ;
+; Ball:ball|upper[7]                      ; 4       ;
+; Ball:ball|upper[6]                      ; 4       ;
+; Ball:ball|upper[5]                      ; 4       ;
+; Ball:ball|upper[2]                      ; 4       ;
+; Ball:ball|upper[1]                      ; 10      ;
+; Ball:ball|lower[7]                      ; 5       ;
+; Ball:ball|lower[6]                      ; 5       ;
+; Ball:ball|lower[5]                      ; 5       ;
+; Ball:ball|lower[4]                      ; 5       ;
+; Ball:ball|lower[3]                      ; 5       ;
+; Paddle:paddle1|paddle_upper[7]          ; 5       ;
+; Paddle:paddle1|paddle_upper[6]          ; 5       ;
+; Paddle:paddle1|paddle_upper[5]          ; 5       ;
+; Paddle:paddle1|paddle_upper[3]          ; 5       ;
+; Paddle:paddle1|paddle_upper[1]          ; 5       ;
+; Paddle:paddle1|paddle_lower[8]          ; 5       ;
+; Paddle:paddle1|paddle_lower[5]          ; 5       ;
+; Paddle:paddle1|paddle_lower[4]          ; 5       ;
+; Paddle:paddle1|paddle_lower[3]          ; 5       ;
+; Paddle:paddle1|paddle_lower[1]          ; 5       ;
 ; Total number of inverted registers = 26 ;         ;
 +-----------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Game|Ball:ball|direction  ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Game|Ball:ball|direction  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Game|Paddle:paddle1|paddle_upper[4] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Game|Paddle:paddle1|paddle_upper[1] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Game|Ball:ball|direction            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Game|Ball:ball|direction            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -337,16 +340,6 @@ Encoding Type:  One-Hot
 +------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Ball:ball"                                                                                                                                      ;
-+----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port     ; Type  ; Severity ; Details                                                                                                                                      ;
-+----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; p1_upper ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; p1_lower ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
@@ -354,21 +347,22 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; boundary_port         ; 18                          ;
 ; cycloneiii_ff         ; 81                          ;
-;     CLR               ; 13                          ;
-;     ENA CLR           ; 67                          ;
+;     CLR               ; 15                          ;
+;     ENA CLR           ; 65                          ;
 ;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 199                         ;
-;     arith             ; 126                         ;
+; cycloneiii_lcell_comb ; 261                         ;
+;     arith             ; 163                         ;
 ;         2 data inputs ; 21                          ;
-;         3 data inputs ; 105                         ;
-;     normal            ; 73                          ;
+;         3 data inputs ; 142                         ;
+;     normal            ; 98                          ;
+;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 3                           ;
-;         2 data inputs ; 24                          ;
-;         3 data inputs ; 10                          ;
-;         4 data inputs ; 36                          ;
+;         2 data inputs ; 30                          ;
+;         3 data inputs ; 15                          ;
+;         4 data inputs ; 49                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 3.15                        ;
+; Max LUT depth         ; 6.90                        ;
+; Average LUT depth     ; 3.95                        ;
 +-----------------------+-----------------------------+
 
 
@@ -377,7 +371,7 @@ Encoding Type:  One-Hot
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -387,7 +381,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Sat Aug  8 10:25:45 2026
+    Info: Processing started: Sun Aug  9 20:24:35 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pong -c pong
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -398,8 +392,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file SyncCou
     Info (12023): Found entity 1: SyncCount File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/SyncCount.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file ClockDivider.sv
     Info (12023): Found entity 1: ClockDivider File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/ClockDivider.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file Decoder.sv
-    Info (12023): Found entity 1: Decoder File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Decoder.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file GraphicsDriver.sv
     Info (12023): Found entity 1: GraphicsDriver File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/GraphicsDriver.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file Ball.sv
@@ -412,12 +404,12 @@ Info (12021): Found 1 design units, including 1 entities, in source file Paddle.
     Info (12023): Found entity 1: Paddle File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Paddle.sv Line: 1
 Info (12127): Elaborating entity "Game" for the top level hierarchy
 Info (12128): Elaborating entity "ClockDivider" for hierarchy "ClockDivider:clock_divider" File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Game.sv Line: 27
-Info (12128): Elaborating entity "Ball" for hierarchy "Ball:ball" File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Game.sv Line: 48
-Info (10264): Verilog HDL Case Statement information at Ball.sv(44): all case item expressions in this case statement are onehot File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Ball.sv Line: 44
-Info (10264): Verilog HDL Case Statement information at Ball.sv(55): all case item expressions in this case statement are onehot File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Ball.sv Line: 55
-Info (10264): Verilog HDL Case Statement information at Ball.sv(66): all case item expressions in this case statement are onehot File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Ball.sv Line: 66
-Info (10264): Verilog HDL Case Statement information at Ball.sv(78): all case item expressions in this case statement are onehot File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Ball.sv Line: 78
-Info (12128): Elaborating entity "Paddle" for hierarchy "Paddle:paddle1" File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Game.sv Line: 61
+Info (12128): Elaborating entity "Ball" for hierarchy "Ball:ball" File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Game.sv Line: 50
+Info (10264): Verilog HDL Case Statement information at Ball.sv(46): all case item expressions in this case statement are onehot File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Ball.sv Line: 46
+Info (10264): Verilog HDL Case Statement information at Ball.sv(57): all case item expressions in this case statement are onehot File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Ball.sv Line: 57
+Info (10264): Verilog HDL Case Statement information at Ball.sv(68): all case item expressions in this case statement are onehot File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Ball.sv Line: 68
+Info (10264): Verilog HDL Case Statement information at Ball.sv(80): all case item expressions in this case statement are onehot File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Ball.sv Line: 80
+Info (12128): Elaborating entity "Paddle" for hierarchy "Paddle:paddle1" File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Game.sv Line: 63
 Warning (10230): Verilog HDL assignment warning at Paddle.sv(28): truncated value with size 32 to match size of target (10) File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Paddle.sv Line: 28
 Warning (10230): Verilog HDL assignment warning at Paddle.sv(36): truncated value with size 32 to match size of target (10) File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Paddle.sv Line: 36
 Warning (10230): Verilog HDL assignment warning at Paddle.sv(39): truncated value with size 32 to match size of target (10) File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Paddle.sv Line: 39
@@ -443,25 +435,25 @@ Info (10041): Inferred latch for "paddle_right[6]" at Paddle.sv(30) File: /home/
 Info (10041): Inferred latch for "paddle_right[7]" at Paddle.sv(30) File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Paddle.sv Line: 30
 Info (10041): Inferred latch for "paddle_right[8]" at Paddle.sv(30) File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Paddle.sv Line: 30
 Info (10041): Inferred latch for "paddle_right[9]" at Paddle.sv(30) File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Paddle.sv Line: 30
-Info (12128): Elaborating entity "GraphicsDriver" for hierarchy "GraphicsDriver:driver" File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Game.sv Line: 79
+Info (12128): Elaborating entity "GraphicsDriver" for hierarchy "GraphicsDriver:driver" File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/Game.sv Line: 81
 Info (12128): Elaborating entity "SyncCount" for hierarchy "GraphicsDriver:driver|SyncCount:sync_count" File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/GraphicsDriver.sv Line: 34
 Warning (10230): Verilog HDL assignment warning at SyncCount.sv(25): truncated value with size 32 to match size of target (10) File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/SyncCount.sv Line: 25
 Warning (10230): Verilog HDL assignment warning at SyncCount.sv(28): truncated value with size 32 to match size of target (10) File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/SyncCount.sv Line: 28
 Info (12128): Elaborating entity "DrawBall" for hierarchy "GraphicsDriver:driver|DrawBall:draw_ball" File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/GraphicsDriver.sv Line: 49
 Info (12128): Elaborating entity "Mux" for hierarchy "GraphicsDriver:driver|Mux:red_mux" File: /home/charlesmaebi/ProjectsSummer2026/pong-game-fpga/GraphicsDriver.sv Line: 56
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 218 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 280 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 14 output pins
-    Info (21061): Implemented 200 logic cells
+    Info (21061): Implemented 262 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
     Info: Peak virtual memory: 463 megabytes
-    Info: Processing ended: Sat Aug  8 10:25:54 2026
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:21
+    Info: Processing ended: Sun Aug  9 20:24:43 2026
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:19
 
 

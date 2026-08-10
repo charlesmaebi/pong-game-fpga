@@ -15,7 +15,7 @@ module Paddle(
 
 );
 
-localparam [9:0] SPEED = 10'd1;
+localparam [9:0] SPEED = 10'd7;
 
 localparam [9:0] TOP_SCREEN = 10'd34;
 localparam [9:0] BOTTOM_SCREEN = 10'd514;
@@ -46,12 +46,25 @@ always_ff @(posedge clock25 or posedge reset) begin
 			paddle_lower <= paddle_lower;
 		end
 		else if (dir_up) begin
-			paddle_upper <= paddle_upper - SPEED;
-			paddle_lower <= paddle_lower - SPEED;
+			if (paddle_upper <= TOP_SCREEN) begin 
+				paddle_upper <= paddle_upper;
+				paddle_lower <= paddle_lower;
+			end
+			else begin
+				paddle_upper <= paddle_upper - SPEED;
+				paddle_lower <= paddle_lower - SPEED;
+			end
 		end
 		else if (dir_down) begin
-			paddle_upper <= paddle_upper + SPEED;
-			paddle_lower <= paddle_lower + SPEED;
+			if (paddle_lower >= BOTTOM_SCREEN) begin 
+				paddle_upper <= paddle_upper;
+				paddle_lower <= paddle_lower;
+			end
+			else begin
+				paddle_upper <= paddle_upper + SPEED;
+				paddle_lower <= paddle_lower + SPEED;
+			end
+			
 		end
 	end
 end

@@ -35,12 +35,14 @@ end
 
 assign frame_tick = vsync & ~vsync_prev;
 
-
-
 Ball ball(
 	.reset(reset),
 	.enable(frame_tick),
 	.clock25(clock25),
+	.p1_upper(paddle1_upper),
+	.p1_lower(paddle1_lower),
+	.p1_up(p1_up),
+	.p1_down(p1_down),
 	.upper(ball_upper),
 	.lower(ball_lower),
 	.right(ball_right),
